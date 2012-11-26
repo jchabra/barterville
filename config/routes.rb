@@ -1,8 +1,8 @@
 Barterville::Application.routes.draw do
 
-  resources :users
-  resources :notifications
-  resources :products
+  resources :user
+  resources :notification
+  resources :product
   
 
   # The priority is based upon order of creation:
