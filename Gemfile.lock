@@ -88,11 +88,22 @@ GEM
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
     net-ssh (2.6.1)
+<<<<<<< HEAD
+=======
+    net-ssh (2.6.2)
+>>>>>>> e61f552baca44957aab415dcbe2b674f3206df17
     nokogiri (1.5.5)
     nokogiri (1.5.5-x86-mingw32)
     pg (0.14.1)
     pg (0.14.1-x86-mingw32)
     polyglot (0.3.3)
+<<<<<<< HEAD
+=======
+    pry (0.9.10)
+      coderay (~> 1.0.5)
+      method_source (~> 0.8)
+      slop (~> 3.3.1)
+>>>>>>> e61f552baca44957aab415dcbe2b674f3206df17
     pry (0.9.10-x86-mingw32)
       coderay (~> 1.0.5)
       method_source (~> 0.8)
