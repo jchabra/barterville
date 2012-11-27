@@ -1,13 +1,27 @@
 module ApplicationHelper
 	def all_products_content
 		if @authenticated_user
-				link_to "Home", root_path
-			# @authenticated_user.products.each do |product|
-			# 	# render 'all_products'
-			# end
+			render 'all_products'
 		else
-			link_to "Logged Out" 
+			link_to "Please Log In", login_path
 			# render :partial => 'shared/search'
+		end
+	end
+
+	def login_or_logout_link
+		if @authenticated_user
+			link_to "Logout", logout_path
+		else
+			link_to "Login", login_path
+			# render :partial => 'shared/search'
+		end
+	end
+
+	def edit_or_from_link
+		if @product_owner == @authenticated_user
+			link_to "You (Edit Product)", edit_product_path(@product) 
+		else
+			link_to @product_owner.username, @product_owner
 		end
 	end
 end

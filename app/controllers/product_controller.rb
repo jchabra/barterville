@@ -7,15 +7,16 @@ class ProductController < ApplicationController
 	def create
 	end
 	def show
-		product = Product.find(params[:id])
-		@product_name = product.name
-		@product_condition = product.condition
-		@product_photo_url = product.photo
-		@product_owner = User.find(product.user_id)
-		@product_added = product.created_at
+		@product = Product.find(params[:id])
+		@product_name = @product.name
+		@product_condition = @product.condition
+		@product_photo_url = @product.photo
+		@product_owner = User.find(@product.user_id)
+		@product_added = @product.created_at
+		@product_description = @product.description
 	end
 	def edit
-
+		@product = Product.find(params[:id])
 	end
 	def destroy
 	end

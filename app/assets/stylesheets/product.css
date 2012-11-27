@@ -1,0 +1,48 @@
+/*
+=show styles
+*/
+
+div.product-details {
+	border-left: 1px solid #aaa;
+	border-bottom: 1px solid #aaa;
+	padding-left: 5px;
+	
+}
+
+div.product-details h2{
+	font-size: 66px;
+}
+
+div.product-details span{
+	display: block;
+}
+
+	div.product-details span:nth-of-type(n+2) {
+		font-style: italic;
+	}
+
+.product-description {
+	color: #96969f;
+	line-height: 1.2;
+	font-size: 36px;
+	font-style: italic;
+	margin: 20px 0 10px 25px;
+}
+
+	.product-description:before{
+		color: #ccc;
+		content: "“";
+		font-size: 64px;
+		line-height: .6;
+		margin-left: -24px;
+		vertical-align: -10px;
+	}
+
+/*
+=form styles
+*/
+
+#description-field textarea {
+	height: 200px;
+	width: 500px;
+}
