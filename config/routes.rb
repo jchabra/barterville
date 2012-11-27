@@ -1,8 +1,8 @@
 Barterville::Application.routes.draw do
 
-  resources :user
-  resources :notification
-  resources :product
+  resources :users
+  resources :notifications
+  resources :products
   
   match '/login' => 'session#new', :via => :get
   match '/login' => 'session#create', :via => :post

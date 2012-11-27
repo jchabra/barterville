@@ -28,6 +28,10 @@ module ApplicationHelper
 			link_to "Edit Profile", edit_user_path(@user)
 		else
 			#this does nothing
+
+	def trade_options
+		if @product_owner != @authenticated_user
+			render 'trading'
 		end
 	end
 end
