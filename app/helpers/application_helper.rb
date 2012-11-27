@@ -22,4 +22,10 @@ module ApplicationHelper
 			link_to @product_owner.username, @product_owner
 		end
 	end
+
+	def trade_options
+		if @product_owner != @authenticated_user
+			render 'trading'
+		end
+	end
 end
