@@ -1,6 +1,6 @@
 <h1>New user</h1>
 
-<%= form_for(@user) do |f| %>
+<%= form_for(@user, :url => '/user') do |f| %>
 
   <div class="field">
     <%= f.label :username %><br />
@@ -28,18 +28,17 @@
   </div>
   
   <div class="field">
-    <%= f.label :zip, "Zip Code" %><br />
+    <%= f.label :zip, "Zip Code:" %><br />
     <%= f.number_field :zip %>
   </div>
   
   <div class="field">
     <%= f.label :bio, "Bio:" %><br />
-    <%= f.text_field :bio %>
+    <%= f.text_area :bio %>
   </div>
   
   <div class="actions">
     <%= f.submit %>
   </div>
-<% end %>
 
-<%= link_to 'Back', user_path %>
+<% end %>
