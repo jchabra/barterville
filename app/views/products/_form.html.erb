@@ -1,5 +1,6 @@
 <div class="span9">
     <%= form_for(@product) do |f| %>
+    <%= render :partial => 'shared/errors', :locals => {:object => @product} %>
         <div class="field">
             <%= f.label :name %><br />
             <%= f.text_field :name %>

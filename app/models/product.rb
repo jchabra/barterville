@@ -14,4 +14,10 @@
 
 class Product < ActiveRecord::Base
 	belongs_to :user
+	mount_uploader :photo, PhotoUploader
+
+	validates :name, :presence => true
+	validates :description, :length => { :minimum => 3 }
+	# validates :photo, :presence => true
+	validates :condition, :length => { :minimum => 3 }
 end

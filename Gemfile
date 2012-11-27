@@ -14,6 +14,8 @@ gem 'bcrypt-ruby'
 gem 'kaminari'
 gem 'fog'
 gem "aws-ses", "~> 0.4.4", :require => 'aws/ses'
+gem 'carrierwave'
+gem 'rmagick'
 
 # Gems used only for assets and not required
 # in production environments by default.

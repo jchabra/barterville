@@ -1,11 +1,18 @@
 class ProductsController < ApplicationController
 	def index
-		@all_products = Product.all.shuffle
+		# @all_products = Product.all.shuffle
+		@all_products = Product.page(params[:page])
 	end
 	def new
 		@product = Product.new
 	end
 	def create
+		@product = Product.new(params[:product])
+	    if @product.save
+	    	redirect_to products_path
+	    else
+	    	render :new
+	    end
 	end
 	def show
 		@product = Product.find(params[:id])

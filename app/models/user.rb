@@ -18,4 +18,14 @@ class User < ActiveRecord::Base
 	has_many :products
 	has_secure_password
 	has_many :notifications
+	mount_uploader :photo, PhotoUploader
+
+	validates :username, :presence => true
+	validates :username, :uniqueness => true
+	validates :first_name, :length => { :minimum => 3 }
+	validates :last_name, :length => { :minimum => 3 }
+	validates :zip, :length => { :minimum => 5 }
+	# validates :photo, :presence => true
+	validates :bio, :length => { :minimum => 3 }
+	validates :password, :length => { :in => 1..20 }
 end
