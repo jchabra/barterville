@@ -4,6 +4,9 @@ Barterville::Application.routes.draw do
   resources :notification
   resources :product
   
+  match '/login' => 'session#new', :via => :get
+  match '/login' => 'session#create', :via => :post
+  match '/logout' => 'session#destroy', :via => :get
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
