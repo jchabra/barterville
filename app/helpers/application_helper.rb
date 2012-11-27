@@ -3,8 +3,7 @@ module ApplicationHelper
 		if @authenticated_user
 			render 'all_products'
 		else
-			link_to "Please Log In", login_path
-			# render :partial => 'shared/search'
+			link_to "Please Log In To See Your Products", login_path
 		end
 	end
 
@@ -13,7 +12,6 @@ module ApplicationHelper
 			link_to "Logout", logout_path
 		else
 			link_to "Login", login_path
-			# render :partial => 'shared/search'
 		end
 	end
 

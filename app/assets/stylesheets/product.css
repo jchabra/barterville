@@ -6,11 +6,11 @@ div.product-details {
 	border-left: 1px solid #aaa;
 	border-bottom: 1px solid #aaa;
 	padding-left: 5px;
-	
 }
 
 div.product-details h2{
 	font-size: 66px;
+	line-height: 1;
 }
 
 div.product-details span{
@@ -45,4 +45,35 @@ div.product-details span{
 #description-field textarea {
 	height: 200px;
 	width: 500px;
+}
+
+/*
+=index styles (A lot of this is actually =_all_products styles)
+*/
+
+.my-product {
+	height: 60px;
+	overflow: hidden;
+}
+
+div.individual-product {
+	border: 1px solid #fff;
+	height: 298px;
+	margin-bottom: 10px;
+	overflow: hidden;
+	width: 218px;
+}
+
+	div.individual-product:hover {
+		border: 1px dashed #ddd;
+	}
+
+.individual-product span.name{
+	background: #eee;
+	display: block;
+}
+
+.individual-product span.user{
+	font-size: 10px;
+	font-style: italic;
 }
