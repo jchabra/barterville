@@ -1,1 +1,6 @@
 <% content_for :title, "View product" %>
+
+Name: <%= @product_name %><br>
+Condition: <%= @product_condition %><br>
+Added: <%= time_ago_in_words(@product_added) %> ago<br>
+Owner: <%= @product_owner.username %><br>
