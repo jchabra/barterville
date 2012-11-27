@@ -14,6 +14,10 @@ class ProductController < ApplicationController
 		@product_owner = User.find(@product.user_id)
 		@product_added = @product.created_at
 		@product_description = @product.description
+
+		if @authenticated_user
+			@authenticated_user_products_array = @authenticated_user.products.map {|p| [p.name, p.id]}
+		end
 	end
 	def edit
 		@product = Product.find(params[:id])

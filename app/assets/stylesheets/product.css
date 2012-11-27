@@ -47,6 +47,25 @@ div.product-details span{
 	width: 500px;
 }
 
+#delete-product {
+	font-size: 12px;
+}
+
+#delete-product a{
+	color: #F5384B;
+}
+
+.tradeable-products select {
+	width: 500px;
+}
+
+.product-trading h3.btn {
+	font-size: 18px;
+	text-align: center;
+	margin: 10px;
+	width: 680px;
+}
+
 /*
 =index styles (A lot of this is actually =_all_products styles)
 */
