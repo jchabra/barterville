@@ -1,17 +1,21 @@
 class UserController < ApplicationController
 	def index
-		users = User.all
+		@users = User.all
 	end
 	def new
-		user = User.new
+		# raise params.inspect
+		@user = User.new
 	end
 	def create
 		@user = User.new(params[:user])
-	    @user.username = @user.username.downcase
 	    @user.save
 	end
 	def show
 		user_id = params[:id]
+		@user = User.find(user_id)
+	end
+	def update
+		@user = User.find(params[:id])
 	end
 	def edit
 		user = User.find(params[:id])

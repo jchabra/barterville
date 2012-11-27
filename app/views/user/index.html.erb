@@ -1,0 +1,16 @@
+<% content_for :title, "All Users" %>
+
+<div id="all_users" class="row">
+	<h3>Users</h3>
+		<% @users.each do |user| %>
+			<div class="span3 individual_user">
+				<span class="username"><%= user.first_name %></span>
+				<span class="username"><%= user.last_name %></span>
+			    <%= link_to 'Show', user %>
+			    <%= link_to 'Edit', edit_user_path(user) %>
+			    <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %>
+			    <br>
+		<% end %>
+</div>
+
+<div class="new_user"><%= link_to 'New User', new_user_path %></div>
