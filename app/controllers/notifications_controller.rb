@@ -7,4 +7,8 @@ class NotificationsController < ApplicationController
 	end
 	def create
 	end
+	def offer_trade
+		binding.pry
+	end
+
 end

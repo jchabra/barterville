@@ -6,6 +6,11 @@ class ProductsController < ApplicationController
 		@product = Product.new
 	end
 	def create
+		@product = Product.new(params[:product])
+		@product.user_id = session[:id]
+		@product.save
+
+		redirect_to product_path(@product)
 	end
 	def show
 		@product = Product.find(params[:id])

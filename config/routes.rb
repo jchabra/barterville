@@ -8,6 +8,8 @@ Barterville::Application.routes.draw do
   match '/login' => 'session#create', :via => :post
   match '/logout' => 'session#destroy', :via => :get
 
+  post '/offer_trade' => 'notifications#create'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
