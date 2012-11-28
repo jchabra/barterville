@@ -7,8 +7,10 @@ class NotificationsController < ApplicationController
 		from_product = params[:proposed_trade]
 		from_user = session[:id]
 		to_product = params[:product]
-		to_user = params[:owner]
-		@notification = Notification.create(:from_product => from_product, :to_product => to_product, :from_user => from_user, :to_user => to_user)
+		@to_user_id = params[:owner]
+		@notification = Notification.create(:from_product => from_product, :to_product => to_product, :from_user => from_user, :to_user => @to_user_id)
+		@to_user = User.find(@to_user_id)
+		Mailings.trade_proposed(@to_user).deliver
 		redirect_to root_path
 	end
 
@@ -16,13 +18,14 @@ class NotificationsController < ApplicationController
 		notification = Notification.find(params[:notification_id])
 		notification.update_attributes(:open => false)
 		from_product = Product.find(notification.from_product)
-		from_user = User.find(notification.from_user)
+		@from_user = User.find(notification.from_user)
 		to_product = Product.find(notification.to_product)
 		to_user = User.find(notification.to_user)
 		
 		from_product.update_attributes(:user_id => to_user.id)
-		to_product.update_attributes(:user_id => from_user.id)
+		to_product.update_attributes(:user_id => @from_user.id)
 
+		Mailings.trade_accepted(@from_user).deliver 
 		redirect_to notifications_path
 	end
 

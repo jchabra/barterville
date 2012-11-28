@@ -1,12 +1,11 @@
-<div id="all-products" class="row">
 <h3>All Products</h3>
 <!--This will show all products. We need to change it so that it doesn't show the current user's products.-->
-	<% @products.each do |product| %>
+	<% @all_products.each do |product| %>
 		<div class="span3 individual-product">
 			<span class="name"><%= link_to truncate(product.name, :length => 25, :separator => ' '), product %></span>
 			<span class="user">From: <%= User.find(product.user_id).username %></span>
 			<p class="description"><%= product.description %></p>
 		</div>
 	<% end %>
-<%= paginate @products %>
-</div>
+	<div class="clear"></div>
+<%= paginate @all_products %>

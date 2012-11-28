@@ -44,11 +44,11 @@ class ProductsController < ApplicationController
 	def search
     	query = params[:query]
     	if query.present?
-      		@products = Product.text_search(query).page(params[:page])
+      		@all_products = Product.text_search(query).page(params[:page])
     	else
-      		@products = Product.page(params[:page])
+      		@all_products = Product.page(params[:page])
     	end
-  end
+  	end
 	def destroy
 	end
 end

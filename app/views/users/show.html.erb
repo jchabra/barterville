@@ -9,3 +9,4 @@
 <span>Bio: <%= @user.bio %></span> 
 <br>
 <span><%= edit_profile_link %></span>
+<span><%= link_to 'Delete Profile', username, method: :delete, data: { confirm: 'Are you sure?' } %></span>
