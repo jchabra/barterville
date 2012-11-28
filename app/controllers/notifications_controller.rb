@@ -3,10 +3,6 @@ class NotificationsController < ApplicationController
 		@to_notifications = Notification.where(:to_user => @authenticated_user.id)
 		@from_notifications = Notification.where(:from_user => @authenticated_user.id)
 	end
-	def new
-	end
-	def show
-	end
 	def create
 		from_product = params[:proposed_trade]
 		from_user = session[:id]
@@ -26,13 +22,14 @@ class NotificationsController < ApplicationController
 		
 		from_product.update_attributes(:user_id => to_user.id)
 		to_product.update_attributes(:user_id => from_user.id)
-		
+
 		redirect_to notifications_path
 	end
 
 	def reject_trade
 		notification = Notification.find(params[:notification_id])
 		notification.update_attributes(:open => false)
+		
 		redirect_to notifications_path
 	end
 

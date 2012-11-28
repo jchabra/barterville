@@ -7,6 +7,14 @@ module ApplicationHelper
 		end
 	end
 
+	def notification_link
+		if @authenticated_user
+			link_to "Your Trades (#{@open_notifications_count})", notifications_path
+		else
+			link_to "Sign Up", new_user_path
+		end
+	end
+
 	#Product Helper
 
 	def all_products_content
