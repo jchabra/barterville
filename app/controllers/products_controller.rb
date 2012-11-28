@@ -39,6 +39,14 @@ class ProductsController < ApplicationController
 			render :edit
 		end
 	end
+	def search
+    	query = params[:query]
+    	if query.present?
+      		@products = Product.text_search(query)
+    	else
+      		@products = Product.all
+    	end
+  end
 	def destroy
 	end
 end

@@ -1,8 +1,8 @@
+  <div class="form-horizontal">
 <%= form_for(@user) do |f| %>
 
 <%= render :partial => 'shared/errors', :locals => {:object => @user} %>
 
-<form class="form-horizontal">
   <div class="control-group">
     <%= f.label :username, :class => 'control-label' %><br />
     <div class="controls">
@@ -51,9 +51,9 @@
     </div><!--.controls-->
   </div>
   
-  <div class="actions">
+  <div class="actions controls">
     <%= f.submit :class => 'btn btn-primary' %>
   </div>
-</form>
+</div><!--.form-horizontal-->
 
 <% end %>

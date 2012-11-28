@@ -3,6 +3,10 @@
 <!--This will show the specific user's products-->
 <%= all_products_content %>
 
+<%= form_tag '/products/search', :class => "form-search", :remote => true do %>
+ <%= text_field_tag 'query', placeholder = 'Search Products', :class => "input-medium search-query pull-right" %>
+<% end %>
+
 <div id="all-products" class="row">
 <h3>All Products</h3>
 <!--This will show all products. We need to change it so that it doesn't show the current user's products.-->
