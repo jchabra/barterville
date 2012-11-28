@@ -23,3 +23,4 @@ class Product < ActiveRecord::Base
 	def self.text_search(query)
   		self.where("name @@ :q or description @@ :q", :q => query)
   	end
+end
