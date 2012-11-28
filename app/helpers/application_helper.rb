@@ -41,6 +41,14 @@ module ApplicationHelper
 		end
 	end
 
+	def edit_profile_link #if the profile pg you're on is your page, then go ahead and edit it.
+		if @authenticated_user == @user
+			link_to "Edit Profile", edit_user_path(@user)
+		else
+			#this does nothing
+		end
+	end
+
 	#Notification helpers
 
 	def open_status

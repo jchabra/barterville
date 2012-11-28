@@ -1,0 +1,2 @@
+$('#productlist').empty(); //empty out the contents of the file
+$('#productlist').append("<%=j render :partial => 'products', :locals => { :products => @products } %>"); 

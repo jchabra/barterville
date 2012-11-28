@@ -1,16 +1,20 @@
 class ProductsController < ApplicationController
 	def index
-		@all_products = Product.all.shuffle
+		# @all_products = Product.all.shuffle
+		@all_products = Product.page(params[:page])
 	end
 	def new
 		@product = Product.new
 	end
 	def create
 		@product = Product.new(params[:product])
+	    if @product.save
+	    	redirect_to products_path(@product)
+	    else
+	    	render :new
+	    end
 		@product.user_id = session[:id]
 		@product.save
-
-		redirect_to product_path(@product)
 	end
 	def show
 		@product = Product.find(params[:id])
@@ -37,6 +41,14 @@ class ProductsController < ApplicationController
 			render :edit
 		end
 	end
+	def search
+    	query = params[:query]
+    	if query.present?
+      		@products = Product.text_search(query)
+    	else
+      		@products = Product.all
+    	end
+  end
 	def destroy
 	end
 end
