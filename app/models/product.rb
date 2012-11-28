@@ -24,3 +24,5 @@ class Product < ActiveRecord::Base
   		self.where("name @@ :q or description @@ :q", :q => query)
   	end
 end
+
+

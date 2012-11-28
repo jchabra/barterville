@@ -4,7 +4,7 @@
 <%= all_products_content %>
 
 <%= form_tag '/products/search', :class => "form-search", :remote => true do %>
- <%= text_field_tag 'query', placeholder = 'Search Products', :class => "input-medium search-query pull-right" %>
+ <%= text_field_tag 'query' %>
 <% end %>
 
 <div id="all-products" class="row">
@@ -17,6 +17,6 @@
 			<p class="description"><%= product.description %></p>
 		</div>
 	<% end %>
+<%= paginate @all_products %>
 </div>
 
-<%= paginate @all_products %>
