@@ -50,6 +50,12 @@
       <%= f.text_area :bio %>
     </div><!--.controls-->
   </div>
+  <div class="control-group">
+    <div class="field">
+      <%= f.label :photo %><br />
+      <%= f.file_field :photo %>
+    </div>
+  </div>
   
   <div class="actions controls  ">
     <%= f.submit :class => 'btn btn-primary' %>

@@ -31,9 +31,16 @@ class UsersController < ApplicationController
 	end
 	def edit
 		@user = User.find(params[:id])
+		if session[:id] != params[:id]
+			redirect_to users_path
+		end
 	end
 	def destroy
-		user = User.find(params[:id])
-    	user.delete
+		if session[:id] != params[:id]
+			redirect_to users_path
+		else
+			user = User.find(params[:id])
+	    	user.delete
+		end
 	end
 end

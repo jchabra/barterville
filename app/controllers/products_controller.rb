@@ -1,6 +1,5 @@
 class ProductsController < ApplicationController
 	def index
-		# @all_products = Product.all.shuffle
 		@all_products = Product.page(params[:page])
 	end
 	def new
@@ -31,6 +30,9 @@ class ProductsController < ApplicationController
 	end
 	def edit
 		@product = Product.find(params[:id])
+		if @product.user_id != session[:id]
+			redirect_to products_path
+		end
 	end
 	def update
 		@product = Product.find(params[:id])

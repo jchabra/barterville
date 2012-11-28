@@ -1,3 +1,7 @@
+<% content_for :title, "#{@user.username}" %>
+
+<%= image_tag @user.photo %>
+
 <h3>User Name: <%= @user.username %></h2>
 
 <span>First Name: <%= @user.first_name %></span>
