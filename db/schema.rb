@@ -11,14 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121126204748) do
+ActiveRecord::Schema.define(:version => 20121127215305) do
 
   create_table "notifications", :force => true do |t|
     t.string   "subject"
     t.text     "message"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.integer  "user_id"
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+    t.integer  "to_user"
+    t.integer  "to_product"
+    t.integer  "from_user"
+    t.integer  "from_product"
+    t.boolean  "unread",       :default => true
+    t.boolean  "open",         :default => true
   end
 
   create_table "products", :force => true do |t|

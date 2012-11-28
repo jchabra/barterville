@@ -1,6 +1,10 @@
 <div class="span9">
+<<<<<<< HEAD
     <%= form_for(@product) do |f| %>
     <%= render :partial => 'shared/errors', :locals => {:object => @product} %>
+=======
+    <%= form_for(@product, :html => {:multipart => :true}) do |f| %>
+>>>>>>> 2771ab236dcbbfdf4cc4f4010e542124726293db
         <div class="field">
             <%= f.label :name %><br />
             <%= f.text_field :name %>
@@ -14,6 +18,11 @@
         <div class="field">
             <%= f.label :condition %><br />
             <%= f.text_field :condition %>
+        </div>
+        
+        <div class="field">
+            <%= f.label :photo %><br />
+            <%= f.file_field :photo %>
         </div>
         
         <%= f.submit "Let's Go", :class => 'btn btn-success' %>

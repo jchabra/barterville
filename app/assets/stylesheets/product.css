@@ -2,6 +2,12 @@
 =show styles
 */
 
+div.product .clipped-image {
+	height: 100px;
+	overflow: hidden;
+	width: 100%
+}
+
 div.product-details {
 	border-left: 1px solid #aaa;
 	border-bottom: 1px solid #aaa;

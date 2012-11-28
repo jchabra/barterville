@@ -14,6 +14,7 @@
 
 class Product < ActiveRecord::Base
 	belongs_to :user
+<<<<<<< HEAD
 	mount_uploader :photo, PhotoUploader
 
 	validates :name, :presence => true
@@ -24,4 +25,8 @@ class Product < ActiveRecord::Base
 	def self.text_search(query)
   		self.where("name @@ :q or description @@ :q", :q => query)
   end
+=======
+
+	mount_uploader :photo, PhotoUploader
+>>>>>>> 2771ab236dcbbfdf4cc4f4010e542124726293db
 end

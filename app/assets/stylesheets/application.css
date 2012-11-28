@@ -3,6 +3,10 @@
  *= require 'main'
  *= require 'product'
  *= require 'user'
+<<<<<<< HEAD
+=======
+ *= require 'notification'
+>>>>>>> 2771ab236dcbbfdf4cc4f4010e542124726293db
 */
 
 

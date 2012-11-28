@@ -1,4 +1,14 @@
 module ApplicationHelper
+	def login_or_logout_link
+		if @authenticated_user
+			link_to "Logout", logout_path
+		else
+			link_to "Login", login_path
+		end
+	end
+
+	#Product Helper
+
 	def all_products_content
 		if @authenticated_user
 			render 'all_products'
@@ -7,13 +17,13 @@ module ApplicationHelper
 		end
 	end
 
-	def login_or_logout_link
-		if @authenticated_user
-			link_to "Logout", logout_path
-		else
-			link_to "Login", login_path
+	def trade_options
+		if @product_owner != @authenticated_user
+			render :partial => 'trading', :locals => {:product => @product}
 		end
 	end
+
+	#User helpers
 
 	def edit_or_from_link
 		if @product_owner == @authenticated_user
@@ -23,6 +33,7 @@ module ApplicationHelper
 		end
 	end
 
+<<<<<<< HEAD
 	def edit_profile_link #if the profile pg you're on is your page, then go ahead and edit it.
 		if @authenticated_user == @user
 			link_to "Edit Profile", edit_user_path(@user)
@@ -35,5 +46,15 @@ module ApplicationHelper
 		if @product_owner != @authenticated_user
 			render 'trading'
 		end
+=======
+	#Notification helpers
+
+	def open_status
+		if notification.open
+			"open"
+		else
+			"closed"
+		end	
+>>>>>>> 2771ab236dcbbfdf4cc4f4010e542124726293db
 	end
 end
