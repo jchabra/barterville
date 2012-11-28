@@ -17,8 +17,6 @@
 class User < ActiveRecord::Base
 	has_many :products
 	has_many :notifications
-<<<<<<< HEAD
-	mount_uploader :photo, PhotoUploader
 
 	validates :username, :presence => true
 	validates :username, :uniqueness => true
@@ -28,9 +26,8 @@ class User < ActiveRecord::Base
 	# validates :photo, :presence => true
 	validates :bio, :length => { :minimum => 3 }
 	validates :password, :length => { :in => 1..20 }
-=======
+	
 	has_secure_password
-
+	
 	mount_uploader :photo, PhotoUploader
->>>>>>> 2771ab236dcbbfdf4cc4f4010e542124726293db
 end

@@ -33,7 +33,6 @@ module ApplicationHelper
 		end
 	end
 
-<<<<<<< HEAD
 	def edit_profile_link #if the profile pg you're on is your page, then go ahead and edit it.
 		if @authenticated_user == @user
 			link_to "Edit Profile", edit_user_path(@user)
@@ -42,11 +41,6 @@ module ApplicationHelper
 		end
 	end
 
-	def trade_options
-		if @product_owner != @authenticated_user
-			render 'trading'
-		end
-=======
 	#Notification helpers
 
 	def open_status
@@ -55,6 +49,5 @@ module ApplicationHelper
 		else
 			"closed"
 		end	
->>>>>>> 2771ab236dcbbfdf4cc4f4010e542124726293db
 	end
 end

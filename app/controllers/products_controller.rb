@@ -8,18 +8,13 @@ class ProductsController < ApplicationController
 	end
 	def create
 		@product = Product.new(params[:product])
-<<<<<<< HEAD
 	    if @product.save
-	    	redirect_to products_path
+	    	redirect_to products_path(@product)
 	    else
 	    	render :new
 	    end
-=======
 		@product.user_id = session[:id]
 		@product.save
-
-		redirect_to product_path(@product)
->>>>>>> 2771ab236dcbbfdf4cc4f4010e542124726293db
 	end
 	def show
 		@product = Product.find(params[:id])
