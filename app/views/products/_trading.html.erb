@@ -5,6 +5,8 @@
 	<h4>Select Something to Trade</h4>
 		<%= form_tag '/offer_trade' do %>
 			<%= select(@notification, :proposed_trade, @authenticated_user_products_array) %>
+			<%= hidden_field_tag 'product', @product.id %> 
+			<%= hidden_field_tag 'owner', @product_owner.id %> 
 			<%= submit_tag 'Offer Trade', :class => 'btn btn-success' %>
 		<% end %>
 	</div>

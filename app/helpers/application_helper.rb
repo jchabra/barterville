@@ -19,7 +19,7 @@ module ApplicationHelper
 
 	def trade_options
 		if @product_owner != @authenticated_user
-			render 'trading'
+			render :partial => 'trading', :locals => {:product => @product}
 		end
 	end
 
@@ -31,5 +31,15 @@ module ApplicationHelper
 		else
 			link_to @product_owner.username, @product_owner
 		end
+	end
+
+	#Notification helpers
+
+	def open_status
+		if notification.open
+			"open"
+		else
+			"closed"
+		end	
 	end
 end

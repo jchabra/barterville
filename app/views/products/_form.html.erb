@@ -1,5 +1,5 @@
 <div class="span9">
-    <%= form_for(@product) do |f| %>
+    <%= form_for(@product, :html => {:multipart => :true}) do |f| %>
         <div class="field">
             <%= f.label :name %><br />
             <%= f.text_field :name %>
@@ -13,6 +13,11 @@
         <div class="field">
             <%= f.label :condition %><br />
             <%= f.text_field :condition %>
+        </div>
+        
+        <div class="field">
+            <%= f.label :photo %><br />
+            <%= f.file_field :photo %>
         </div>
         
         <%= f.submit "Let's Go", :class => 'btn btn-success' %>

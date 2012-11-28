@@ -16,6 +16,8 @@
 
 class User < ActiveRecord::Base
 	has_many :products
-	has_secure_password
 	has_many :notifications
+	has_secure_password
+
+	mount_uploader :photo, PhotoUploader
 end
