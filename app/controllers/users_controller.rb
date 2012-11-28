@@ -26,13 +26,13 @@ class UsersController < ApplicationController
 	    end
 	end
 	def edit
-		@user = User.find(params[:id])
-		if session[:id] != params[:id]
+		@user = User.find(params[:id].to_i)
+		if session[:id] != params[:id].to_i
 			redirect_to users_path
 		end
 	end
 	def destroy
-		if session[:id] != params[:id]
+		if session[:id] != params[:id].to_i
 			redirect_to users_path
 		else
 			user = User.find(params[:id])
