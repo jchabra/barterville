@@ -16,4 +16,24 @@ class NotificationsController < ApplicationController
 		redirect_to root_path
 	end
 
+	def accept_trade
+		notification = Notification.find(params[:notification_id])
+		notification.update_attributes(:open => false)
+		from_product = Product.find(notification.from_product)
+		from_user = User.find(notification.from_user)
+		to_product = Product.find(notification.to_product)
+		to_user = User.find(notification.to_user)
+		
+		from_product.update_attributes(:user_id => to_user.id)
+		to_product.update_attributes(:user_id => from_user.id)
+		
+		redirect_to notifications_path
+	end
+
+	def reject_trade
+		notification = Notification.find(params[:notification_id])
+		notification.update_attributes(:open => false)
+		redirect_to notifications_path
+	end
+
 end
