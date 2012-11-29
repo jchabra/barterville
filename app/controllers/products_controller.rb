@@ -23,8 +23,8 @@ class ProductsController < ApplicationController
 		@product_owner = User.find(@product.user_id)
 		@product_added = @product.created_at
 		@product_description = @product.description
-
-		if @authenticated_user
+		
+		if !@authenticated_user.nil?
 			@authenticated_user_products_array = @authenticated_user.products.map {|p| [p.name, p.id]}
 		end
 	end
