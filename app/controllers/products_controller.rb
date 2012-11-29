@@ -52,11 +52,13 @@ class ProductsController < ApplicationController
     	end
   	end
 	def destroy
+		@product = Product.find(params[:id])
 		if @product.user_id != session[:id]
 			redirect_to products_path
 		else
 			product = Product.find(params[:id])
 	    	product.delete
+	    	redirect_to products_path
 		end
 	end
 end
