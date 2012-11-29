@@ -52,5 +52,11 @@ class ProductsController < ApplicationController
     	end
   	end
 	def destroy
+		if @product.user_id != session[:id]
+			redirect_to products_path
+		else
+			product = Product.find(params[:id])
+	    	product.delete
+		end
 	end
 end

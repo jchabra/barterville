@@ -20,6 +20,7 @@ module ApplicationHelper
 	def all_products_content
 		if @authenticated_user
 			render 'all_products'
+			link_to 'Add New Product', new_product_path
 		else
 			link_to "Please Log In To See Your Products", login_path
 		end
@@ -57,5 +58,15 @@ module ApplicationHelper
 		else
 			"closed"
 		end	
+	end
+
+	#Username on nav bar helper
+
+	def user_nav_link
+		if @authenticated_user
+			link_to @authenticated_user.username, @authenticated_user
+		else
+			#do nothing
+		end
 	end
 end

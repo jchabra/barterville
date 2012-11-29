@@ -1,3 +1,14 @@
 .individual_user {
 	margin-left: 0px;
 }
+
+div.user-details {
+	border-left: 1px solid #aaa;
+	border-bottom: 1px solid #aaa;
+	padding-left: 5px;
+}
+
+.user-details h2 {
+	font-size: 72px;
+	line-height: 1;
+}

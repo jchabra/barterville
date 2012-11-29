@@ -1,12 +1,15 @@
-<h3>User Name: <%= @user.username %></h2>
+<% content_for :title, "View User - #{@user.username}" %>
 
-<span>First Name: <%= @user.first_name %></span>
-<br>
-<span>Last Name: <%= @user.last_name %></span> 
-<br>
-<span>Zip Code: <%= @user.zip %></span> 
-<br>
-<span>Bio: <%= @user.bio %></span> 
-<br>
-<span><%= edit_profile_link %></span>
-<span><%= link_to 'Delete Profile', username, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+<div class="product">
+	<div class="clipped-image">
+		<%= image_tag @user.photo %>
+	</div>
+	<div class="product-details">
+	<h2><%= @user.username %></h2>
+		<span><%= @user.first_name %> <%= @user.last_name %></span> 
+		<span>Zip Code: <%= @user.zip %></span> 
+		<span>Bio: <%= @user.bio %></span> 
+		<span><%= edit_profile_link %></span>
+	</div>
+</div>
+

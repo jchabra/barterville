@@ -1,0 +1,19 @@
+@import url(http://fonts.googleapis.com/css?family=Unkempt:700);
+
+.home {
+	font-family: 'Unkempt', 'Lucida Sans', sans-serif;
+	margin-bottom: 30px;
+	color: #273a46;
+}
+
+.home_image {
+
+}
+
+h3, h4 {
+	margin-left: 20px;
+}
+
+.button {
+	margin-top: 24px;
+}
