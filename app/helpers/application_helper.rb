@@ -27,7 +27,7 @@ module ApplicationHelper
 	end
 
 	def trade_options
-		if @product_owner != @authenticated_user
+		if !@authenticated_user.nil? && @product_owner != @authenticated_user
 			render :partial => 'trading', :locals => {:product => @product}
 		end
 	end

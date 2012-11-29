@@ -85,7 +85,7 @@ div.product-details span{
 	overflow: hidden;
 }
 
-div.individual-product {
+div.individual-product, div.individual-user {
 	border: 1px solid #fff;
 	height: 298px;
 	margin-bottom: 10px;
@@ -93,16 +93,32 @@ div.individual-product {
 	width: 218px;
 }
 
-	div.individual-product:hover {
+	div.individual-product:hover, div.individual-user:hover {
 		border: 1px dashed #ddd;
 	}
 
-.individual-product span.name{
+.individual-product span.name, .individual-user span.name{
 	background: #eee;
 	display: block;
 }
 
-.individual-product span.user{
+.individual-product span.user, .individual-user span.trades{
 	font-size: 10px;
 	font-style: italic;
 }
+
+.individual-product .product-overlay {
+	background: rgba(255,255,255,.8);
+	height: 278px;
+	position: absolute;
+	width: 218px;
+	z-index: 1;
+}
+
+	.individual-product .product-overlay:hover{
+		background: rgba(255,255,255, 0);
+	}
+
+	.individual-product:hover p{
+		opacity: 0;
+	}

@@ -23,8 +23,8 @@ class ProductsController < ApplicationController
 		@product_owner = User.find(@product.user_id)
 		@product_added = @product.created_at
 		@product_description = @product.description
-
-		if @authenticated_user
+		
+		if !@authenticated_user.nil?
 			@authenticated_user_products_array = @authenticated_user.products.map {|p| [p.name, p.id]}
 		end
 	end
@@ -52,11 +52,13 @@ class ProductsController < ApplicationController
     	end
   	end
 	def destroy
+		@product = Product.find(params[:id])
 		if @product.user_id != session[:id]
 			redirect_to products_path
 		else
 			product = Product.find(params[:id])
 	    	product.delete
+	    	redirect_to products_path
 		end
 	end
 end

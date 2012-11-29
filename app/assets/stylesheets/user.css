@@ -1,7 +1,3 @@
-.individual_user {
-	margin-left: 0px;
-}
-
 div.user-details {
 	border-left: 1px solid #aaa;
 	border-bottom: 1px solid #aaa;
@@ -11,4 +7,12 @@ div.user-details {
 .user-details h2 {
 	font-size: 72px;
 	line-height: 1;
+}
+
+/*
+=Index styles (much of this is in product)
+*/
+
+div.individual-user{
+	height: 100px;
 }
