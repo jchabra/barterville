@@ -16,8 +16,8 @@ class UsersController < ApplicationController
 			else
 				@top_users[notification.from_user] += 1
 			end
-		end	
-		@top_users = @top_users.sort_by{|k,v| -v}.first 3		
+		end
+		@top_users = @top_users.sort_by{|k,v| -v}.first 3
 	end
 	def new
 		@user = User.new
@@ -40,10 +40,10 @@ class UsersController < ApplicationController
 	def update
 		@user = User.find(params[:id])
 		if @user.update_attributes(params[:user])
-	    	redirect_to user_path
-	    else
-	      render :edit
-	    end
+    	redirect_to user_path
+    else
+      render :edit
+    end
 	end
 	def edit
 		@user = User.find(params[:id].to_i)
@@ -56,9 +56,9 @@ class UsersController < ApplicationController
 			redirect_to users_path
 		else
 			user = User.find(params[:id])
-	    	reset_session #Bad things happen if you don't reset the session.
-	    	user.delete
-	    	redirect_to users_path
+    	reset_session #Bad things happen if you don't reset the session.
+    	user.delete
+    	redirect_to users_path
 		end
 	end
 end

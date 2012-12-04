@@ -11,7 +11,7 @@ class NotificationsController < ApplicationController
 		@notification = Notification.create(:from_product => from_product, :to_product => to_product, :from_user => from_user, :to_user => @to_user_id)
 		@to_user = User.find(@to_user_id)
 		Mailings.trade_proposed(@to_user).deliver
-		redirect_to root_path
+		redirect_to notifications_path
 	end
 
 	def accept_trade

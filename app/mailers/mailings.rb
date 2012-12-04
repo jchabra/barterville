@@ -1,5 +1,5 @@
 class Mailings < ActionMailer::Base
-  default from: "jchabra@gmail.com"
+  default from: "dustinqs@gmail.com"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
@@ -10,7 +10,7 @@ class Mailings < ActionMailer::Base
     @user = user
     @greeting = "Hi"
 
-    mail to: "jchabra@gmail.com", :subject => "Welcome to Barterville"
+    mail to: "dustinqs@gmail.com", :subject => "Welcome to Barterville"
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
@@ -22,7 +22,7 @@ class Mailings < ActionMailer::Base
     @to_user = user
     @greeting = "Hi"
 
-    mail to: "jchabra@gmail.com", :subject => "New Trade Proposed"
+    mail to: "dustinqs@gmail.com", :subject => "New Trade Proposed"
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
@@ -34,6 +34,6 @@ class Mailings < ActionMailer::Base
     @from_user = user
     @greeting = "Hi"
 
-    mail to: "jchabra@gmail.com", :subject => "Trade Accepted"
+    mail to: "dustinqs@gmail.com", :subject => "Trade Accepted"
   end
 end

@@ -22,28 +22,35 @@
     <div class="controls">
       <%= f.password_field :password_confirmation %>
   </div>
-  
+
+  <div class="control-group">
+    <%= f.label "Email", :class => 'control-label' %><br />
+    <div class="controls">
+      <%= f.text_field :email %>
+    </div><!--.controls-->
+  </div>
+
   <div class="control-group">
     <%= f.label :first_name, :class => 'control-label' %><br />
     <div class="controls">
       <%= f.text_field :first_name %>
     </div><!--.controls-->
   </div>
-  
+
   <div class="control-group">
     <%= f.label :last_name, :class => 'control-label' %><br />
     <div class="controls">
       <%= f.text_field :last_name %>
     </div><!--.controls-->
   </div>
-  
+
   <div class="control-group">
     <%= f.label :zip, "Zip Code:", :class => 'control-label' %><br />
     <div class="controls">
-      <%= f.number_field :zip %>
+      <%= f.text_field :zip %>
     </div><!--.controls-->
   </div>
-  
+
   <div class="control-group">
     <%= f.label :bio, "Bio:", :class => 'control-label' %><br />
     <div class="controls">
@@ -56,7 +63,7 @@
       <%= f.file_field :photo %>
     </div>
   </div>
-  
+
   <div class="actions controls  ">
     <%= f.submit :class => 'btn btn-primary' %>
   </div>
